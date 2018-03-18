@@ -70,7 +70,8 @@ module.exports = {
 			'vue$': 'vue/dist/vue.esm.js',
 			'_app': path.resolve(__dirname, 'src/app'),
 			'_img': path.resolve(__dirname, 'src/assets/images'),
-			'_scss': path.resolve(__dirname, 'src/assets/scss')
+			'_scss': path.resolve(__dirname, 'src/assets/scss'),
+			'_npm': path.join(__dirname, 'node_modules')
 		},
 		extensions: ['*', '.js', '.vue', '.json']
 	},

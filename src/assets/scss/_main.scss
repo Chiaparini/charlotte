@@ -1,23 +1,18 @@
 @import 'base';
 
 // Vendor styles
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-// @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons');
-// @import '~_npm/vuetify/dist/vuetify.min.css';
-// @import "~_npm/font-awesome/css/font-awesome.css";
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600');
+@import '~_npm/vuetify/dist/vuetify.min.css';
 
 @import 'vars';
-// @import '~_sass_config/vars';
-// @import '~_sass_config/mixins';
-// @import '~_sass_comp/input';
-// @import '~_sass_comp/button';
 
 html {
     padding-right: 0 !important;
 }
 
 #app {
-    font-family: $font-default;
+    font-family: $font-montserrat-normal;
 
     width: 100%;
 }
