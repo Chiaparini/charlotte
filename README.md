@@ -1,6 +1,5 @@
-# charlotte
+# Charlotte
 
-> CHARLOTTE
 
 ## Build Setup
 
