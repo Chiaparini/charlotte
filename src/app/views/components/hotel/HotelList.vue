@@ -50,7 +50,7 @@
 		methods: {
 			isHotelAvailable (hotel) {
 				if (!this.filters) return true
-				return (hotel.rate <= this.filters.rate
+				return ((hotel.rate <= this.filters.rate || this.filters.rate === 0)
 						&& hotel.price >= this.filters.range.min
 						&& hotel.price <= this.filters.range.max)
 			}

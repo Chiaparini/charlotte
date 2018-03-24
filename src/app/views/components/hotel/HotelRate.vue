@@ -14,17 +14,28 @@
                 rates: []
             }
         },
+        watch: {
+            rate () {
+                this.buildStars()
+            }
+        },
         props: {
             rate: {
                 type: Number,
                 default: 0
             }
         },
-        mounted () {
-            // eslint-disable-next-line
-            for (let i = 0; i < this.rate; i++) {
-                this.rates.push(i)
+        methods: {
+            buildStars () {
+                while (this.rates.length) this.rates.pop()
+                // eslint-disable-next-line
+                for (let i = 0; i < this.rate; i++) {
+                    this.rates.push(i)
+                }
             }
+        },
+        mounted () {
+            this.buildStars()
         }
     }
 </script>
