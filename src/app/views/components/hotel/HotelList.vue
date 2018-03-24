@@ -17,7 +17,7 @@
 				</transition-group>
 			</div>
 			<div v-else class="hotel-list__items" style="width: 100%">
-				<h2>Please, select a corresponding filter</h2>
+				<h2>Sorry, we didn't found any hotel!</h2>
 			</div>
 		</div>
 	</div>
@@ -41,7 +41,15 @@
 		computed: {
 			filteredList () {
 				if (this.filters && !this.firstTime) {
-					return this.hotels.filter(this.isHotelAvailable)
+					return this.hotels.filter(this.isHotelAvailable).sort((a, b) => {
+						if (a.rate > b.rate) {
+							return -1
+						}
+						if (a.rate < b.rate) {
+							return 1
+						}
+						return 0
+					})
 				}
 				this.firstTime = false
 				return this.hotels
