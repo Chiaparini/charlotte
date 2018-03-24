@@ -9,10 +9,12 @@
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+npm start
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Arquitetura CSS
+
+Bom, como eu utilizei Vue com componentes separados pensei em também usar a metodologia BEM (Block, Element, Modifier). 
+
+Desta maneira, eu consigo organizar o meu SCSS em componentes escopados (evitando arvores de herança no CSS). 
+Também reduz o conflito de estilos, mantendo o CSS especifico para o elemento em um nível minimo 
