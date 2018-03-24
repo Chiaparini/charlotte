@@ -14,7 +14,7 @@
         "no-new": "off",
         "comma-dangle": [2, "never"],
         "comma-style": [2, "first", { "exceptions": { "ArrayExpression": true, "ObjectExpression": true } }],
-        "indent": ["error", "space"],
+        "indent": "off",
         "prefer-arrow-callback": 2,
         "semi": [2, "never"],
         "space-before-blocks": 2,

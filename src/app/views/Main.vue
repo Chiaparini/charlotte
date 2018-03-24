@@ -1,42 +1,65 @@
 <template>
-    <div class="content">
-        <div class="content__banner"></div>
-        <div class="content__ingress">
-            <div class="content__ingress__crown">
+    <div class="main">
+        <div class="main__banner"></div>
+        <div class="main__ingress">
+            <div class="main__ingress__crown">
                 <img src="~_img/crown.svg" alt="Crown">
             </div>
-            <p class="content__ingress__sub">
+            <p class="main__ingress__sub">
                 Welcome to
             </p>
-            <h1 class="content__ingress__title">
+            <h1 class="main__ingress__title">
                 Charlotte
             </h1>
-            <p class="content__ingress__sub">
+            <p class="main__ingress__sub">
                 The Queen City
             </p>
         </div>
 
-        <calendar></calendar>
+        <calendar :on-search="fillList"></calendar>
 
+		<hotel-list :period="date" :hotels="hotels"></hotel-list>
     </div>
 </template>
 
 <script>
-    import Calendar from './components/Calendar.vue'
+	import HotelsServices from '_app/services/HotelsServices.js'
+	import Calendar from './components/calendar/Calendar.vue'
+	import HotelList from './components/hotel/HotelList.vue'
 
 
-    export default {
-        components: {
-            Calendar
+	export default {
+        data () {
+            return {
+                date: null,
+                hotels: null
+            }
+        },
+		components: {
+			Calendar,
+			HotelList
+        },
+        methods: {
+            fillList (date) {
+                HotelsServices.getHotels().then(response => {
+                    this.date = date
+					this.hotels = response.hotels
+                }).catch(err => {
+                    // eslint-disable-next-line
+                    console.warn(err)
+                    // eslint-disable-next-line
+                    alert("We couldn't fetch the hotel data :(. See console for more info")
+                })
+            }
         }
-    }
+	}
 
 </script>
 
 <style lang="scss" scoped>
     @import '~_scss/vars';
 
-    .content {
+    .main {
         padding-top: 100px;
 
         &__banner {
@@ -82,15 +105,19 @@
             &__title {
                 font-family: $font-heebo-titles;
                 font-weight: 800;
+                color: $color-white;
                 border: 2px solid $color-white;
                 border-left: none;
                 border-right: none;
                 padding: 10px;
                 line-height: 5.625rem;
-                font-size: 4.75rem;
                 letter-spacing: .6625rem;
+                margin-top: 0;
+
+                @media (min-width: 1152px) {
+                    font-size: 4.75rem;
+                }
             }
-    
         }
     }
 

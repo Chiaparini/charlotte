@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Heebo:400,700');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700');
 @import '~_npm/v-calendar/lib/v-calendar.min.css';
-@import '~_npm/vuetify/dist/vuetify.min.css';
+// @import '~_npm/buefy/lib/buefy.css';
 
 @import 'vars';
 
@@ -20,4 +20,53 @@ html {
 
 p {
     margin-bottom: initial;
+}
+
+.btn {
+	font-size: .9375rem;
+	text-align: center;
+    border-radius: 100px;
+    padding: 15px 45px;
+
+    display: block;
+
+    border: 2px solid;
+
+    transition: all .2s ease-in-out;
+
+	&--is-orange {
+        color: $color-orange-regular;
+
+        &:hover {
+            background-color: $color-orange-regular;
+            color: $color-white;
+        }
+    }
+    
+    &--is-green {
+        color: $color-green-regular;
+
+        &:hover {
+            background-color: $color-green-regular;
+            color: $color-white;
+        }
+    }
+}
+
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.25s ease-out;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+.list-enter-active, .list-leave-active {
+    transition: all .9s ease-out;
+}
+
+.list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateX(-50px)
 }
