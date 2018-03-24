@@ -1,8 +1,11 @@
-# charlotte
+# Charlotte
 
-> CHARLOTTE
 
 ## Build Setup
+
+`NODE VERSION: 6.9.5`
+`NPM VERSION: 3.10.10`
+
 
 ``` bash
 # install dependencies
